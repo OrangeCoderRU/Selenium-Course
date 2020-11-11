@@ -9,9 +9,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class FirstTest {
@@ -21,9 +26,22 @@ public class FirstTest {
 
     @Before
     public void start(){
+//        Разные браузеры
+
 //        driver = new FirefoxDriver();
-//        System.setProperty("webdriver.edge.driver","C:\\edgedriver\\msedgedriver.exe");
+
+//        System.setProperty("webdriver.edge.driver","C:\\webdrivers\\MicrosoftWebDriver.exe.");
 //        driver = new EdgeDriver();
+
+//        Firefox по старой схеме (Selenium > 3.3)
+//        FirefoxOptions options = new FirefoxOptions().setLegacy(true);
+//        driver = new FirefoxDriver(options);
+
+//        Firefox Nightly
+//        FirefoxOptions option = new FirefoxOptions();
+//        option.setBinary(new FirefoxBinary(new File("C:\\Program Files\\Firefox Nightly\\firefox.exe")));
+//        driver = new FirefoxDriver(option);
+
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, 10);
     }
