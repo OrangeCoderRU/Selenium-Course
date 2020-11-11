@@ -7,6 +7,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
@@ -18,6 +21,9 @@ public class FirstTest {
 
     @Before
     public void start(){
+//        driver = new FirefoxDriver();
+//        System.setProperty("webdriver.edge.driver","C:\\edgedriver\\msedgedriver.exe");
+//        driver = new EdgeDriver();
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, 10);
     }
