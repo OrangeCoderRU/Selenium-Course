@@ -91,12 +91,14 @@ public class ControlPanelTest extends TestBase {
 
 
         for (WebElement elem : countries_web) {
+            // Проходим по странам и добавляем в список их названия
 
             WebElement current_country = elem.findElement(By.cssSelector("td:nth-child(5)"));
             countries.add(current_country.getAttribute("textContent"));
             int num_zones = Integer.parseInt(elem.findElement(By.cssSelector("td:nth-child(6)")).getAttribute("textContent"));
 
             if (num_zones != 0) {
+                // Если таймзон больше 0 - копируем ссылку на страну
                 WebElement link_true_country = current_country.findElement(By.cssSelector("a"));
                 true_timezones.add(link_true_country.getAttribute("href"));
             }
@@ -106,6 +108,7 @@ public class ControlPanelTest extends TestBase {
         check_alphabet(countries);
 
         for (String link_country : true_timezones) {
+            // Переходим по полученным ссылкам и работаем с таймзонами
             driver.get(link_country);
 
             List<String> timezone_names = new ArrayList<>();
