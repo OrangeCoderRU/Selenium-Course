@@ -11,16 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import static org.junit.Assert.assertTrue;
 
-public class StickerTest {
+public class StickerTest extends TestBase {
 
-    private WebDriver driver;
-    private WebDriverWait wait;
-
-    @Before
-    public void start() {
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, 10);
-    }
 
     @Test
     public void StickerTest(){
@@ -32,11 +24,5 @@ public class StickerTest {
         }
 
     }
-
-    @After
-    public void stop() {
-        driver.quit();
-        driver = null;
-    }
-
+    
 }
