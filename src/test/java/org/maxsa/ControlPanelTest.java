@@ -105,6 +105,7 @@ public class ControlPanelTest extends TestBase {
 
         }
 
+        // Мой метод проверки на алфавитность
         check_alphabet(countries);
 
         for (String link_country : true_timezones) {
@@ -125,6 +126,44 @@ public class ControlPanelTest extends TestBase {
 
             }
 
+        }
+
+    }
+
+    @Test
+    public void geoTest(){
+        driver.get("http://localhost/litecart/admin/");
+        WebElement login = driver.findElement(By.name("username"));
+        login.sendKeys("admin");
+        WebElement password = driver.findElement(By.name("password"));
+        password.sendKeys("admin");
+        driver.findElement(By.name("login")).click();
+
+        driver.get("http://localhost/litecart/admin/?app=geo_zones&doc=geo_zones");
+        List <WebElement> list_countries = driver.findElements(By.cssSelector(".dataTable tr.row"));
+
+        List <String> geozones_links = new ArrayList<>();
+        List <String> code_geozones = new ArrayList<>();
+
+        for (WebElement elem : list_countries) {
+            // Копируем ссылки на страны
+            WebElement row_link = elem.findElement(By.cssSelector("td:nth-child(3) > a"));
+            geozones_links.add(row_link.getAttribute("href"));
+        }
+
+        for (String link_zone : geozones_links) {
+            // Проходим по странам и проверяем их зоны
+            driver.get(link_zone);
+            List <WebElement> row_zones = driver.findElements(By.cssSelector("#table-zones tr:not(.header)"));
+            for (WebElement zone : row_zones) {
+                if (row_zones.indexOf(zone) == row_zones.size() - 1){
+                    break;
+                }
+                code_geozones.add(zone.findElement(By.cssSelector("td:nth-child(3) option")).getAttribute("text"));
+            }
+
+            check_alphabet(code_geozones);
+            code_geozones.clear();
         }
 
     }
