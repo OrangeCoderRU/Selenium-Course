@@ -143,7 +143,7 @@ public class ControlPanelTest extends TestBase {
         List <WebElement> list_countries = driver.findElements(By.cssSelector(".dataTable tr.row"));
 
         List <String> geozones_links = new ArrayList<>();
-        List <String> code_geozones = new ArrayList<>();
+        List <String> name_geozones = new ArrayList<>();
 
         for (WebElement elem : list_countries) {
             // Копируем ссылки на страны
@@ -159,11 +159,13 @@ public class ControlPanelTest extends TestBase {
                 if (row_zones.indexOf(zone) == row_zones.size() - 1){
                     break;
                 }
-                code_geozones.add(zone.findElement(By.cssSelector("td:nth-child(3) option")).getAttribute("text"));
+                name_geozones.add(zone.findElement(By.cssSelector("td:nth-child(3) > select > option[selected]")).getAttribute("text"));
             }
 
-            check_alphabet(code_geozones);
-            code_geozones.clear();
+            // Проверяем алфавит
+            check_alphabet(name_geozones);
+
+            name_geozones.clear();
         }
 
     }
