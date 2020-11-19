@@ -112,7 +112,7 @@ public class CheckProduct extends TestBase {
         page_campaign_price = driver.findElement(By.cssSelector(".price-wrapper .campaign-price")).getAttribute("textContent");
         page_color_regprice = driver.findElement(By.cssSelector(".price-wrapper .regular-price")).getCssValue("color");
         page_color_campprice = driver.findElement(By.cssSelector(".price-wrapper .campaign-price")).getCssValue("color");
-        page_font_regprice = driver.findElement(By.cssSelector(".price-wrapper .campaign-price")).getCssValue("font");
+        page_font_regprice = driver.findElement(By.cssSelector(".price-wrapper .regular-price")).getCssValue("font");
         page_font_campprice = driver.findElement(By.cssSelector(".price-wrapper .campaign-price")).getCssValue("font");
 
         // Обычная цена на странице товара серая
