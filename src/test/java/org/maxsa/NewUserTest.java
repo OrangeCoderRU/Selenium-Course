@@ -59,15 +59,14 @@ public class NewUserTest extends TestBase {
         driver.findElement(By.cssSelector("input[name='confirmed_password']")).sendKeys(password);
         driver.findElement((By.cssSelector("button[name='create_account'"))).click();
 
-//        driver.findElement(By.cssSelector("#box-account ul.list-vertical > a:not(li)")).click();
+        driver.findElement(By.cssSelector("#box-account ul.list-vertical > li:nth-child(4) > a")).click();
 
-        driver.get("http://localhost/litecart/en/logout");
 
         // Входим в созданный аккаунт
         driver.findElement(By.cssSelector("input[name='email']")).sendKeys(email);
         driver.findElement(By.cssSelector("input[name='password']")).sendKeys(password);
         driver.findElement(By.cssSelector("button[name='login']")).click();
 
-        driver.get("http://localhost/litecart/en/logout");
+        driver.findElement(By.cssSelector("#box-account ul.list-vertical > li:nth-child(4) > a")).click();
     }
 }
