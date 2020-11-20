@@ -132,6 +132,6 @@ public class CheckProduct extends TestBase {
         assertEquals("Акционные цены отличаются", main_campaign_price, page_campaign_price);
 
 
-
+        
     }
 }
