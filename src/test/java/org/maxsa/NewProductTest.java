@@ -95,7 +95,7 @@ public class NewProductTest extends TestBase{
         price.clear();
         price.sendKeys("350");
 
-        driver.findElement(By.cssSelector("button[name='save'")).click();
+        driver.findElement(By.cssSelector("button[name='save']")).click();
 
         assertTrue(isElementPresent(By.xpath("//a[normalize-space()='" + name_product + "']")));
 
