@@ -47,6 +47,5 @@ public class BasketTest extends TestBase {
             wait.until(ExpectedConditions.stalenessOf(basket));
 
         }
-        Thread.sleep(5000);
     }
 }
