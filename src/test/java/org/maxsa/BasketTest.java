@@ -39,7 +39,9 @@ public class BasketTest extends TestBase {
         driver.findElement(By.cssSelector("div#cart")).click();
 
         for (int i = 1; i <= 3; i++){
+
             WebElement remove = driver.findElement(By.cssSelector("button[value='Remove']"));
+            wait.until(ExpectedConditions.visibilityOf(remove));
             WebElement basket = driver.findElement(By.cssSelector("table.dataTable.rounded-corners tr.footer td:nth-child(2)"));
             Thread.sleep(500);
             remove.click();
