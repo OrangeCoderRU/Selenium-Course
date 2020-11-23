@@ -55,7 +55,5 @@ public class SwitchToHandle extends TestBase {
                 driver.switchTo().window(original_window);
             }
         }
-        
-        Thread.sleep(5000);
     }
 }
