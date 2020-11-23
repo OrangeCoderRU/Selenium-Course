@@ -40,13 +40,18 @@ public class BasketTest extends TestBase {
 
         for (int i = 1; i <= 3; i++){
 
-            WebElement remove = driver.findElement(By.cssSelector("button[value='Remove']"));
-            wait.until(ExpectedConditions.visibilityOf(remove));
-            WebElement basket = driver.findElement(By.cssSelector("table.dataTable.rounded-corners tr.footer td:nth-child(2)"));
-            Thread.sleep(500);
-            remove.click();
+            if (areElementsPresent(By.cssSelector("button[value='Remove']"))){
+                WebElement remove = driver.findElement(By.cssSelector("button[value='Remove']"));
+                wait.until(ExpectedConditions.visibilityOf(remove));
+                WebElement basket = driver.findElement(By.cssSelector("table.dataTable.rounded-corners tr.footer td:nth-child(2)"));
+                Thread.sleep(500);
+                remove.click();
 
-            wait.until(ExpectedConditions.stalenessOf(basket));
+                wait.until(ExpectedConditions.stalenessOf(basket));
+            }
+            else{
+                break;
+            }
 
         }
     }
