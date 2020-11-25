@@ -23,8 +23,6 @@ public class ViewLogs extends TestBase{
         driver.get("http://localhost/litecart/admin/?app=catalog&doc=catalog&category_id=1");
         List<WebElement> products = driver.findElements(By.cssSelector("table.dataTable tr"));
 
-//        List <String> logs = new ArrayList<>();
-
         for (int i = 5; i < products.size(); i++){
             WebElement element = driver.findElement(By.cssSelector("table.dataTable tr:nth-child(" + i + ")"));
             String name_prod = element.getText();
