@@ -36,8 +36,8 @@ public class Application {
     public void goToBasket(){
         mainPage.goToBasket();
     }
-    public void removeFromBasket() throws InterruptedException {
-        basketPage.removeProduct();
+    public void removeAllFromBasket() throws InterruptedException {
+        basketPage.removeProducts();
     }
 
 

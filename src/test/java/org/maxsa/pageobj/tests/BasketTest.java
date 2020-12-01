@@ -11,10 +11,7 @@ public class BasketTest extends TestBase{
             app.addToBasket();
         }
         app.goToBasket();
-        for (int i = 0; i < 3; i++){
-            app.removeFromBasket();
-        }
-
+        app.removeAllFromBasket();
         app.quit();
     }
 }
