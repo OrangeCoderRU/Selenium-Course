@@ -12,7 +12,7 @@ public class StepWorkWithBasket implements En {
         When("we start application", () -> {
             app.open();
         });
-        Then("we add {string} random items in the basket", (String arg0) -> {
+        Then("we add {string} random items to the basket", (String arg0) -> {
             for (int i = 0; i < Integer.parseInt(arg0); i++){
                 app.addToBasket();
             }
