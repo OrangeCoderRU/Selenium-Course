@@ -1,4 +1,4 @@
-package org.maxsa.pageobj.tests;
+package org.maxsa.pageobj.cucumber;
 
 import io.cucumber.java8.En;
 import org.maxsa.pageobj.app.Application;
