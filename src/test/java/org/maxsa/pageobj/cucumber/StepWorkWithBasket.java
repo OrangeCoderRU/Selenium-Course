@@ -9,7 +9,7 @@ public class StepWorkWithBasket implements En {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {app.quit(); app = null;}));
     }
     public StepWorkWithBasket() {
-        When("we start application", () -> {
+        Before(() -> {
             app.open();
         });
         Then("we add {string} random items to the basket", (String arg0) -> {
